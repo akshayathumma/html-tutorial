@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CodeCrumbs: My Web Dev Notes</title>
+  <title>HTML Tutorial</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
   <style>
     * {
       margin: 0;
@@ -15,117 +16,448 @@
     body {
       font-family: 'Poppins', sans-serif;
       background: url('bg2.jpg') no-repeat center center/cover;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      color: #fff;
       padding: 20px;
     }
 
-    .roadmap {
+    main {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    header h1 {
       text-align: center;
-      padding: 40px 30px;
-      border-radius: 20px;
-      max-width: 600px;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 15px 40px rgba(128, 128, 128, 0.3);
-    }
-
-    .heading {
-      font-size: 42px;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .tagline {
-      font-size: 18px;
-      color:whitesmoke;
+      font-size: 48px;
+      text-shadow: 2px 2px rgba(0, 0, 0,0.5);
       margin-bottom: 30px;
+      color: #f8649d;
     }
 
-    .process {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
+    section {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+    section:hover{
+      transform: translate(-5px);
     }
 
-    .html, .css, .js {
-      width: 100px;
-      height: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 12px;
-      font-weight: bold;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+    h3 {
+      color: #fda7c8;
+      font-size: 32px;
+      margin-bottom: 15px;
     }
 
-    .html {
-      background: #fd6832;
+    h4 {
+      color: #ffd166;
+      font-size: 26px;
+      margin: 15px 0;
     }
 
-    .css {
-      background: #1a1aea;
+    p {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #f1f1f1;
     }
 
-    .js {
-      background: #eeca1b;
-      color: #333;
+    ul {
+      list-style-type: none;
+      padding-left: 0;
     }
 
-    .process a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
+    li {
+      margin-bottom: 25px;
+    }
+
+    li b {
+      color: #7cd17f;
       font-size: 18px;
     }
 
-    .js a {
-      color: #000;
+    li p {
+      margin-left: 15px;
+      color: #ddd;
     }
 
-    .html:hover,
-    .css:hover,
-    .js:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    img {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+      margin: 10px auto 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
     }
 
-    @media (max-width: 500px) {
-      .heading {
-        font-size: 30px;
-      }
+    code {
+      background-color: #333;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: #e57bd5;
+    }
 
-      .tagline {
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 34px;
+      }
+      h3 {
+        font-size: 24px;
+      }
+      h4 {
+        font-size: 20px;
+      }
+      p, li p {
         font-size: 14px;
       }
+    }
 
-      .html,
-      .css,
-      .js {
-        width: 80px;
-        height: 80px;
-      }
-
-      .process a {
-        font-size: 14px;
-      }
+    .codecon{
+      width:100%;
+      height:100vh;
+      padding:20px;
+      display:flex;
+    }
+    .left,.right{
+      flex-basis:50%;
+      padding:10px;
+    }
+    textarea{
+      width:100%;
+      height:28%;
+      background: #1f1f1f;
+      color:#fff;
+      padding: 10px 20px;
+      border:0;
+      outline:0;
+      font-size: 10px;
+    }
+    #output{
+      width: 100%;
+      height:95%;
+      background: #fff;
+      border:0;
+      outline:0;
+    }
+    label{
+      display: flex;
+      align-items: center;
+      background: #000;
+      height: 30px;
+    }
+    label i{
+      margin-right: 10px;
+      margin-left: 10px;
     }
   </style>
+ <script src="https://kit.fontawesome.com/205f152c7f.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-  <div class="roadmap">
-    <h1 class="heading">CodeCrumbs</h1>
-    <p class="tagline">Beginner friendly web dev notes</p>
-    <div class="process">
-      <div class="html"><a href="html.html">HTML</a></div>
-      <div class="css"><a href="css.html">CSS</a></div>
-      <div class="js"><a href="js.html">JS</a></div>
+  <main>
+    <header>
+      <h1>HTML (Hyper Text Markup Language)</h1>
+    </header>
+
+    <section class="intro">
+      <p>HTML is not a programming language.<br>
+         It is used to design webpages and gives structure to the content.
+      </p>
+    </section>
+
+    <section class="basicstructure">
+      <h3>Basic Structure of HTML</h3>
+      <img src="structure2.png" alt="HTML structure diagram" />
+      <p>
+        - <code>&lt;!DOCTYPE&gt;</code> specifies the HTML version.<br>
+        - <code>&lt;html&gt;</code> is the root of the page.<br>
+        - <code>&lt;head&gt;</code> contains metadata and the title.<br>
+        - <code>&lt;body&gt;</code> contains all visible content.
+      </p>
+    </section>
+
+    <section class="impnotes">
+      <h3>Important Notes</h3>
+      <p>
+        - Tags like <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> are children of <code>&lt;html&gt;</code>.<br>
+        - Most tags have start and end tags.<br>
+        - Empty tags (like <code>&lt;br&gt;</code>) have no content.<br>
+        - HTML is not case-sensitive.<br>
+        - Files are saved with a <code>.html</code> extension.<br>
+        - HTML element = Start tag + content + End tag.<br>
+        - Closing tags start with <code>/</code>.<br>
+        - Comments: <code>&lt;!-- Your comment here --&gt;</code>
+      </p>
+    </section>
+
+    <section class="tags">
+      <h3>Tags in HTML</h3>
+      <p>
+        Tags are the building blocks of HTML. They may contain content or other tags.<br>
+        Attributes add extra information to tags.
+      </p>
+
+      <h4>Types of Tags</h4>
+
+      <ul>
+        <li><b>Heading Tag</b>
+          <p>Defines headings from <code>h1</code> to <code>h6</code>.</p>
+          <img src="headingtags.png" alt="Heading tags">
+        </li>
+
+        <li><b>Paragraph Tag</b>
+          <p>Defines a block of text.</p>
+          <img src="paragraphtag.png" alt="Paragraph tag">
+        </li>
+
+        <li><b>Anchor Tag</b>
+          <p>Used to create links using <code>href</code>.</p>
+          <img src="anchorTag.png" alt="Anchor tag">
+        </li>
+
+        <li><b>img Tag</b>
+          <p>Used to display images.</p>
+          <img src="imgtag.png" alt="Image tag">
+        </li>
+
+        <li><b>Bold, Italic, Underline Tags</b>
+          <p>Used to format text using <code>b</code>, <code>i</code>, and <code>u</code>.</p>
+          <img src="br,b,i,u.png" alt="Bold, Italic, Underline tags">
+        </li>
+
+        <li><b>br Tag</b>
+          <p>Inserts a line break.</p>
+          <img src="br,b,i,u.png" alt="Line break">
+        </li>
+
+        <li><b>Big & Small Tags</b>
+          <p>Change the size of text.</p>
+          <img src="hr,small,big.png" alt="Big and Small tags">
+        </li>
+
+        <li><b>hr Tag</b>
+          <p>Inserts a horizontal line to separate content.</p>
+          <img src="hr,small,big.png" alt="hr tag">
+        </li>
+
+        <li><b>Subscript & Superscript Tags</b>
+          <p>Used for scientific notation like H<sub>2</sub>O or X<sup>2</sup>.</p>
+          <img src="sub,sup.png" alt="Subscript and Superscript">
+        </li>
+
+        <li><b>pre Tag</b>
+          <p>Preserves whitespace and formatting in code blocks.</p>
+          <img src="pre.png" alt="Preformatted text">
+        </li>
+      </ul>
+    </section>
+    <section class="link_attributes">
+      <h3>Link Attributes</h3>
+      <p>
+        -href=" "<br>
+        -src=" "<br>
+        -target="_blank(opens the link in another page)"/
+        "_self(opens in the same page)"/"_parent"/"_top"
+      </p>
+    </section>
+    <section class="divTag">
+      <h3>Div Tag</h3>
+      <p>-This is often used as a container for other elements.<br>
+      -div is a block level element i.e, Always takes full width.</p>
+    </section>
+    <section class="spanTag">
+      <h3>Span Tag</h3>
+      <p>-An inline container.<br>
+      -span takes as much width as necessary.</p>
+    </section>
+    <section class="lists">
+      <h3>Lists</h3>
+      <p>Lists are used to display content which represents a list.</p>
+      <ul>
+        <li><b>Unordered List</b>
+        <p>
+          -Used to list unordered items.<br>
+          <code>&lt;ul&gt;</code>
+          <br>
+          <code>&lt;li&gt;</code>list item<code>&lt;/li&gt;</code>
+          <br>
+          <code>&lt;/ul&gt;</code>
+        </p>
+      <br>
+      -consists of disc,circle,square,none.
+      <br>
+      <img src="ul.png" ></li>
+    </li>
+        <li><b>Ordered List</b>
+        <p>
+          -Used to list ordered items.<br>
+          <code>&lt;ol&gt;</code>
+          <br>
+          <code>&lt;li&gt;</code>list item<code>&lt;/li&gt;</code>
+          <br>
+          <code>&lt;/ol&gt;</code>
+        </p>
+      <br>
+      -consists of Decimal, Lower-alpha, Upper-alpha, Lower-roman,
+      Upper-roman. 
+      <br>
+      <img src="ol.png" ></li>
+      </ul>
+    </section>
+    <section class="tables">
+      <h3>Tables</h3>
+      <p>
+        -It is used to define tables in Html.<br>
+        -It is used to format & display tabular data.
+        -<b>tr tag: </b>table row<br>
+        -<b>td tag: </b>table data<br>
+        -<b>th tag: </b>table data headers<br>
+        -<code>&lt;caption&gt;</code>used to write captions in table<code>&lt;/caption&gt;</code><br>
+        -<b>thead tag: </b>used to wrap table head i.e,caption and tr with th.<br>
+        -<b>tbody: </b>used to wrap the table body.<br>
+        -<b>Colspan Attribute: </b>used for cells spacing.
+      </p>
+      <img src="table.png" >
+
+    </section>
+    <section class="forms">
+  <h3>Forms in HTML</h3>
+  <p>
+    Forms are used to collect user input. They are essential for interactive web pages.<br>
+    Key tags include: <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, and <code>&lt;button&gt;</code>.
+  </p>
+  <img src="forms.png">
+  <p>-<b>type="text"</b>	Plain text field<br>
+-<b>type="email"</b>	Validates email format<br>
+-<b>type="radio"</b>	Used for single choice selection
+id and name	id links with <code>&lt;label&gt;</code>, name used on form submission<br>
+-<b>placeholder</b>	Hint text inside the input field</p>
+</section>
+    <section class="semantic_tags">
+      <h3>Semantic Tags</h3>
+      <p>
+        Semantic tags clearly describe their meaning in a human- and machine-readable way.<br>
+        -Examples include: <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code>, 
+        <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;main&gt;</code>.<br>
+        -They improve accessibility, SEO, and code readability.
+      </p>
+    </section>
+
+    <section class="meta_tags">
+      <h3>Meta Tags</h3>
+      <p>
+        Meta tags go inside the <code>&lt;head&gt;</code> and provide metadata about the HTML document.<br>
+        -<code>&lt;meta charset="UTF-8"&gt;</code><br>
+        -<code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code><br>
+        -<code>&lt;meta name="description" content="HTML tutorial for beginners"&gt;</code><br>
+        -<code>&lt;meta name="keywords" content="HTML, tutorial, web development"&gt;</code>
+      </p>
+    </section>
+
+    <section class="html_entities">
+      <h3>HTML Entities</h3>
+      <p>
+        Entities are used to display reserved characters in HTML.<br>
+        -<code>&amp;lt;</code> = <code>&lt;</code><br>
+        -<code>&amp;gt;</code> = <code>&gt;</code><br>
+        -<code>&amp;nbsp;</code> = non-breaking space<br>
+        -<code>&amp;copy;</code> = ©<br>
+        -<code>&amp;amp;</code> = &amp;
+      </p>
+    </section>
+
+    <section class="audio_video">
+      <h3>Audio and Video Embedding</h3>
+      <p>
+        HTML supports embedding audio and video content using the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> tags.
+      </p>
+      <p>
+        -Audio Example:<br>
+        <code>
+          &lt;audio controls&gt;<br>
+          &nbsp;&nbsp;&lt;source src="audio.mp3" type="audio/mpeg"&gt;<br>
+          &lt;/audio&gt;
+        </code>
+      </p>
+      <p>
+        -Video Example:<br>
+        <code>
+          &lt;video controls width="300"&gt;<br>
+          &nbsp;&nbsp;&lt;source src="video.mp4" type="video/mp4"&gt;<br>
+          &lt;/video&gt;
+        </code>
+      </p>
+    </section>
+
+    <section class="form_inputs_extra">
+      <h3>More Input Types</h3>
+      <p>
+        Additional <code>&lt;input&gt;</code> types in HTML:<br>
+        -<code>type="checkbox"</code> — multiple selections<br>
+        -<code>type="date"</code> — date picker<br>
+        -<code>type="number"</code> — numeric input<br>
+        -<code>type="file"</code> — file uploader<br>
+        -<code>type="submit"</code> — submit form button
+      </p>
+    </section>
+
+    <section class="accessibility">
+      <h3>Basic Accessibility Tips</h3>
+      <p>
+        Accessibility ensures your website is usable by all, including people using assistive technologies.<br>
+        -Always use <code>alt=""</code> in images for screen readers.<br>
+        -Use <code>&lt;label for="id"&gt;</code> to link labels to form fields.<br>
+        -Prefer semantic tags for better structure.<br>
+        -Avoid using only color to convey meaning.
+      </p>
+    </section>
+    <section class="iframe">
+      <h3>iframe in HTML</h3>
+      <p>The iframe (short for inline frame) is an 
+        HTML element that allows you to embed another 
+        HTML page within the current page. It creates 
+        a window (frame) where a different webpage can
+        be displayed — like a mini browser inside your 
+        webpage.</p>
+    </section>
+    <section class="code_editor">
+  <div class="codecon">
+    <div class="left">
+      <label><i class="fab fa-html5" style="color:orangered; margin-right: 8px;"></i>HTML</label>
+      <textarea id="html-code" onkeyup="run()"></textarea>
+
+      <label><i class="fab fa-css3-alt" style="color:deepskyblue; margin-right: 8px;"></i>CSS</label>
+      <textarea id="css-code" onkeyup="run()"></textarea>
+
+      <label><i class="fab fa-js" style="color:gold; margin-right: 8px;"></i>JavaScript</label>
+      <textarea id="js-code" onkeyup="run()"></textarea>
+    </div>
+    <div class="right">
+      <label><i class="fa-solid fa-play"></i> Output</label>
+      <iframe id="output"></iframe>
     </div>
   </div>
+
+  <script>
+
+    function run(){
+      let htmlCode=document.getElementById("html-code").value;
+      let cssCode=document.getElementById("css-code").value;
+      let jsCode=document.getElementById("js-code").value;
+      let output=document.getElementById("output");
+
+      output.contentDocument.body.innerHTML=htmlCode+"<style>"+cssCode+"</style>";
+      output.contentWindow.eval(jsCode);
+    }
+
+
+  </script>
+</section>
+
+
+
+  </main>
 </body>
 </html>
