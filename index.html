@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeCrumbs: My Web Dev Notes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('bg2.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .roadmap {
+      text-align: center;
+      padding: 40px 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 15px 40px rgba(128, 128, 128, 0.3);
+    }
+
+    .heading {
+      font-size: 42px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color:whitesmoke;
+      margin-bottom: 30px;
+    }
+
+    .process {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .html, .css, .js {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .html {
+      background: #fd6832;
+    }
+
+    .css {
+      background: #1a1aea;
+    }
+
+    .js {
+      background: #eeca1b;
+      color: #333;
+    }
+
+    .process a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .js a {
+      color: #000;
+    }
+
+    .html:hover,
+    .css:hover,
+    .js:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 500px) {
+      .heading {
+        font-size: 30px;
+      }
+
+      .tagline {
+        font-size: 14px;
+      }
+
+      .html,
+      .css,
+      .js {
+        width: 80px;
+        height: 80px;
+      }
+
+      .process a {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="roadmap">
+    <h1 class="heading">CodeCrumbs</h1>
+    <p class="tagline">Beginner friendly web dev notes</p>
+    <div class="process">
+      <div class="html"><a href="html.html">HTML</a></div>
+      <div class="css"><a href="css.html">CSS</a></div>
+      <div class="js"><a href="js.html">JS</a></div>
+    </div>
+  </div>
+</body>
+</html>
